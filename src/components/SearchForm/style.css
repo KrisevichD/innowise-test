@@ -1,0 +1,20 @@
+.search {
+    padding: 16px;
+}
+
+.search__input {
+    background-color: var(--card);
+    font-size: 1rem;
+    width: 50rem;
+    padding: 16px;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0px 0px 12px var(--shadow);
+    color: var(--text);
+}
+
+@media (max-width: 1048px) {
+    .search__input {
+        width: calc(100% - 32px);
+    }
+}

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+:root {
+    --white: #ffffff;
+    --green: #27694e;
+    --yellow: #daa520;
+    --red: #ef4444;
+    --brown: #383129;
+    --black: #2a2622;
+    
+    --title: #2b2622;
+    --text: #7c736a;
+    --border: #E7E2DA;
+
+    --background: #f7f4ef;
+    --card: #fcfaf7;
+    --secondary: #eeebe4;
+    --shadow: #c4b8a8;
+    --favorite: #eaf0ed;
+
+    --icon-stroke: #f8f6f1;
+
+    --font-family-title: "Playfair Display";
+    --font-family-text: "Source Sans 3";
+}
+
+.is-dark-theme {
+    --background: #2b2622;
+    --title: #f7f4ef;
+    --text: #7c736a;
+    --card: #2b2622;
+    --shadow: #47403a;
+    --secondary: #7c736a;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: var(--font-family-text);
+}
+
+h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: var(--title);
+    font-family: var(--font-family-title);
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.main__inner {
+    width: 1532px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.books {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 16px;
+}
+
+.books__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.is-message {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--title);
+}
+
+@media (max-width: 1564px) {
+    .main__inner{
+        width: 1274px;
+    }
+
+    .books__list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1306px) {
+    .main__inner{
+        width: 1016px;
+    }
+
+    .books__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1048px) {
+    .main {
+        display: block;
+    }
+
+    .main__inner {
+        width: auto;
+        padding: 0 16px;
+    }
+
+    .books {
+        display: block;
+    }
+
+    .books__list {      
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .books__favorites {
+        position: fixed;
+        top: 86px;
+        right: 15px;
+    }
+}
