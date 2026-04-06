@@ -6,20 +6,17 @@ export default class APIManager {
     defaultRequest: "test",
     fetchOptions: {
       method: "GET",
-      headers: new Headers({
-        "User-Agent": "library (denis.krisevich@gmail.com)",
-      }),
     },
   };
 
   static async fetchBooksData(request) {
     UIRenderer.displayBooksMessage(UIRenderer.messages.pending);
     return fetch(this.getUrlFrom(request), this.api.fetchOptions)
-      .then((responce) => {
-        if (!responce.ok) {
-          throw new Error(responce.status);
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(response.status);
         }
-        return responce.json();
+        return response.json();
       })
       .then((data) => {
         return data;
@@ -28,6 +25,7 @@ export default class APIManager {
         UIRenderer.displayBooksMessage(
           UIRenderer.messages.error + "</br>" + error
         );
+        throw error;
       });
   }
 
